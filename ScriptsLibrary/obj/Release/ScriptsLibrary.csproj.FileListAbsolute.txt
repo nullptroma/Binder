@@ -1,0 +1,15 @@
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\bin\Release\ScriptsLibrary.dll
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\bin\Release\ScriptsLibrary.pdb
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\obj\Release\ScriptsLibrary.dll
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\obj\Release\ScriptsLibrary.pdb
+C:\Users\Roman\AppData\Roaming\Binder\ScriptsLibrary.dll
+C:\Users\Roman\AppData\Roaming\Binder\ScriptsLibrary.pdb
+C:\Users\Roman\Desktop\ScriptsLibrary.dll
+C:\Users\Roman\Desktop\ScriptsLibrary.pdb
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\obj\Release\ScriptsLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\obj\Release\ScriptsLibrary.Properties.Resources.resources
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\obj\Release\ScriptsLibrary.csproj.GenerateResource.cache
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\bin\Release\System.ValueTuple.dll
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\bin\Release\System.ValueTuple.xml
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\obj\Release\ScriptsLibrary.csproj.CopyComplete
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\obj\Release\ScriptsLibrary.csprojAssemblyReference.cache

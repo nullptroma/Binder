@@ -1,0 +1,91 @@
+﻿<Window x:Name="MainWind" x:Class="Binder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
+        xmlns:commands="clr-namespace:Binder"
+        Title="Binder" Height="437" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip" Background="#FFECECEC" Closing="Window_Closing" MinWidth="860" MinHeight="200" BorderBrush="#FF04A419">
+
+    <DockPanel LastChildFill="True">
+        <tb:TaskbarIcon x:Name="NotifyIcon"
+                        IconSource="Биндер.ico"
+                        ToolTipText="Binder"
+                        Width="0"
+                        Height="0"
+                        TrayMouseDoubleClick="NotifyIcon_TrayMouseDoubleClick">
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Показать окно" Click="ShowWindowBut"/>
+                    <MenuItem Header="Скрыть окно" Click="HideWindowBut"/>
+                    <Separator />
+                    <MenuItem x:Name="ExitBut" Header="Выход" Click="ExitBut_Click"/>
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+
+        </tb:TaskbarIcon>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="430" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Menu Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0" Background="#FFECECEC">
+                <MenuItem x:Name="FileMenu" Header="Файл" Margin="0" Background="Transparent" Padding="6,0" UseLayoutRounding="False" VerticalContentAlignment="Stretch">
+                    <MenuItem x:Name="OpenButton" Header="Открыть бинды" Click ="OpenFile_Click" UseLayoutRounding="False"/>
+                    <MenuItem x:Name="SaveButton" Header="Сохранить бинды" Click="SaveFile_Click"/>
+                    <MenuItem x:Name="SaveAsButton" Header="Сохранить бинды как" Click="SaveAsFile_Click"/>
+                    <MenuItem x:Name="OpenScripts" Header="Открыть файл скриптов" Click="OpenScripts_Click"/>
+                </MenuItem>
+                <MenuItem x:Name="Settings" Header="Настройки" Click="Settings_Click"/>
+                <MenuItem x:Name="Help" Header="Помощь" Click="Help_Click"/>
+                <MenuItem x:Name="Record" Header="Запись" Click="Record_Click"/>
+            </Menu>
+            <DockPanel Name ="EditScript" Grid.Column="1"   LastChildFill="True"  Grid.Row="1" Grid.RowSpan="2"  >
+                <DockPanel DockPanel.Dock="Bottom">
+                    <Label x:Name="CursorPos" Content="Курсор: 0  0"  VerticalAlignment="Bottom" DockPanel.Dock="Left" Margin="10,0,0,10"/>
+                    <Button x:Name="SaveScript" Content="Сохранить"  DockPanel.Dock="Bottom" Margin="0,10,10,10" Click="SaveScript_Click" HorizontalAlignment="Right" Width="123" />
+                </DockPanel>
+
+                <ScrollViewer Margin="10,10,10,0" VerticalScrollBarVisibility="Auto">
+                    <TextBox Name ="ScriptBox" TextWrapping="Wrap" Text=""   Background="#FFECECEC" AcceptsReturn="True" LostFocus="ScriptBox_LostFocus" GotFocus="ScriptBox_GotFocus" FontSize="16"/>
+                </ScrollViewer>
+
+            </DockPanel>
+            <Grid Name ="EditScriptsOnOff" Grid.Column="1"   Grid.Row="1" Grid.RowSpan="2" Margin="10,0,10,-1" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="41"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <ScrollViewer Grid.Column="0" Grid.Row="0" Margin="0,0,5,0" VerticalScrollBarVisibility="Auto">
+                    <TextBox Name ="ScriptBoxOn" TextWrapping="Wrap" Text="" Background="#FFECECEC" AcceptsReturn="True"  LostFocus="ScriptBox_LostFocus" GotFocus="ScriptBox_GotFocus" FontSize="16"/>
+                </ScrollViewer>
+                <ScrollViewer Grid.Column="1" Grid.Row="0" Margin="0,0,5,0" VerticalScrollBarVisibility="Auto">
+                    <TextBox Name ="ScriptBoxOff" TextWrapping="Wrap" Text=""  Background="#FFECECEC" AcceptsReturn="True" LostFocus="ScriptBox_LostFocus" GotFocus="ScriptBox_GotFocus" FontSize="16"/>
+                </ScrollViewer>
+
+            </Grid>
+
+            <DockPanel Grid.Column="0"   LastChildFill="True"  Grid.Row="1" Grid.RowSpan="2"  >
+                <DockPanel DockPanel.Dock="Top" Height="20" LastChildFill="False">
+                    <Button x:Name="AddButton" Height="18" Width="18" DockPanel.Dock="Left" Margin="3,0,0,0" Click="AddButton_Click">
+                        <Image Source="Pictures/плюс.png"></Image>
+                    </Button>
+                </DockPanel>
+                <ScrollViewer DockPanel.Dock="Top" Width="426">
+                    <StackPanel x:Name="StackBinds" />
+                </ScrollViewer>
+            </DockPanel>
+
+        </Grid>
+
+
+    </DockPanel>
+</Window>
+    

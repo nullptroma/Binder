@@ -1,0 +1,7 @@
+C:\Users\Roman\source\repos\Binder\Restarter\bin\Release\Restarter.exe.config
+C:\Users\Roman\source\repos\Binder\Restarter\bin\Release\Restarter.exe
+C:\Users\Roman\source\repos\Binder\Restarter\bin\Release\Restarter.pdb
+C:\Users\Roman\source\repos\Binder\Restarter\obj\Release\Restarter.csproj.CoreCompileInputs.cache
+C:\Users\Roman\source\repos\Binder\Restarter\obj\Release\Restarter.exe
+C:\Users\Roman\source\repos\Binder\Restarter\obj\Release\Restarter.pdb
+C:\Users\Roman\source\repos\Binder\Restarter\obj\Release\Restarter.csprojAssemblyReference.cache

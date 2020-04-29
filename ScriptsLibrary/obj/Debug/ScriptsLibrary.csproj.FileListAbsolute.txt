@@ -1,0 +1,13 @@
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\bin\Debug\ScriptsLibrary.dll
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\bin\Debug\ScriptsLibrary.pdb
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\obj\Debug\ScriptsLibrary.dll
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\obj\Debug\ScriptsLibrary.pdb
+C:\Users\Roman\AppData\Roaming\Binder\ScriptsLibrary.dll
+C:\Users\Roman\AppData\Roaming\Binder\ScriptsLibrary.pdb
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\bin\Debug\System.ValueTuple.dll
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\bin\Debug\System.ValueTuple.xml
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\obj\Debug\ScriptsLibrary.csprojAssemblyReference.cache
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\obj\Debug\ScriptsLibrary.Properties.Resources.resources
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\obj\Debug\ScriptsLibrary.csproj.GenerateResource.cache
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\obj\Debug\ScriptsLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Roman\source\repos\Binder\ScriptsLibrary\obj\Debug\ScriptsLibrary.csproj.CopyComplete

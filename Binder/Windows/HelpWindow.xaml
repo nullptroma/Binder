@@ -1,0 +1,47 @@
+﻿<Window x:Class="Binder.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Binder"
+        mc:Ignorable="d"
+        Title="Помощь" Height="419.444" Width="691.667" ResizeMode="NoResize">
+    <TabControl  VerticalAlignment="Top" HorizontalAlignment="Left">
+        <TabItem Header="Программа">
+            <DockPanel LastChildFill="True">
+                <Image Name="img"/>
+            </DockPanel>
+        </TabItem>
+        <TabItem Header="Скрипты">
+            <TabControl  >
+                <TabItem Header="Не возвращающие значения">
+                    <ScrollViewer>
+                        <TextBox x:Name="VoidHelps" HorizontalAlignment="Left"  TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" Background="White" BorderBrush="White" SelectionBrush="#FF0078D7" />
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="String">
+                    <ScrollViewer>
+                        <TextBox x:Name="StringHelps" HorizontalAlignment="Left"  TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" Background="White" BorderBrush="White" SelectionBrush="#FF0078D7" />
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Double">
+                    <ScrollViewer>
+                        <TextBox x:Name="DoubleHelps" HorizontalAlignment="Left"  TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" Background="White" BorderBrush="White" SelectionBrush="#FF0078D7" />
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Int">
+                    <ScrollViewer>
+                        <TextBox x:Name="IntHelps" HorizontalAlignment="Left"  TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" Background="White" BorderBrush="White" SelectionBrush="#FF0078D7" />
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Boolean">
+                    <ScrollViewer>
+                        <TextBox x:Name="BooleanHelps" HorizontalAlignment="Left"  TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" Background="White" BorderBrush="White" SelectionBrush="#FF0078D7" />
+                    </ScrollViewer>
+                </TabItem>
+            </TabControl>
+
+        </TabItem>
+    </TabControl>
+
+</Window>
