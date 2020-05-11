@@ -47,11 +47,11 @@ namespace Binder
         }
         bool alt=false;
         bool hooked = false;
-        new void KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        new void KeyDown(object sender, GlobalHook.MyEventArgs e)
         {
-            if (e.Key == Key.LeftAlt)
+            if (e.e.Key == Key.LeftAlt)
                 alt = true;
-            if (e.Key == Key.S && alt)
+            if (e.e.Key == Key.S && alt)
             {
                 if (hooked)
                 {
@@ -69,9 +69,9 @@ namespace Binder
             }    
         }
 
-        new void KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        new void KeyUp(object sender, GlobalHook.MyEventArgs e)
         {
-            if (e.Key == Key.LeftAlt)
+            if (e.e.Key == Key.LeftAlt)
                 alt = false;
         }
 

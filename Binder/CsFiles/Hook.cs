@@ -21,13 +21,13 @@ namespace Binder
         public static readonly GlobalHook gh = new GlobalHook();//хукер
 
         static HashSet<Key> hs = new HashSet<Key>();//словарь нажатых клавиш
-        static void KeyDown(object sender, KeyEventArgs e)//любая кнопка нажата
+        static void KeyDown(object sender, GlobalHook.MyEventArgs e)//любая кнопка нажата
         {
-            if (!hs.Contains(e.Key))//если такая кнопка не нажата, то записываем её и продолжаем
-                hs.Add(e.Key);
+            if (!hs.Contains(e.e.Key))//если такая кнопка не нажата, то записываем её и продолжаем
+                hs.Add(e.e.Key);
             else//если кнопка уже была нажата - выходим
                 return;
-            var bnds = MainWindow.Binds.Where(b => b.Keys.Contains(e.Key==Key.System?e.SystemKey:e.Key));//ищем бинды, где кнопка соответствует
+            var bnds = MainWindow.Binds.Where(b => b.Keys.Contains(e.e.Key==Key.System?e.e.SystemKey:e.e.Key));//ищем бинды, где кнопка соответствует
             foreach (var b in bnds)//береьираем эти бинды
             {
                 //если нажаты все необходимые кнопки
@@ -44,7 +44,13 @@ namespace Binder
                         }
                         else//обычный бинд
                             scr = b.Script1;//просто берём и выполняем
-                        LoadFuncsRunScripts.ExecScript(scr);//выполняем скрипт
+                        int code = LoadFuncsRunScripts.ExecScript(scr);//выполняем скрипт
+                        switch (code)
+                        {
+                            case 1://1 - эксклюзивный бинд
+                                e.Handled = true;
+                                break;
+                        }
                     }
                     catch (Exception ex)//логгер ошибок
                     {
@@ -58,9 +64,9 @@ namespace Binder
 
         }
 
-        static void KeyUp(object sender, KeyEventArgs e)//кнопка поднята
+        static void KeyUp(object sender, GlobalHook.MyEventArgs e)//кнопка поднята
         {
-            hs.Remove(e.Key);//удаляем её из слоавря
+            hs.Remove(e.e.Key);//удаляем её из слоавря
         }
 
         public static void Block()

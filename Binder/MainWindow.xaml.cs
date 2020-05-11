@@ -406,16 +406,16 @@ namespace Binder
                 Hook.UnHook();
                 keyBind.Text = "<нажмите сочетание>";
                 HashSet<Key> inputKeys = new HashSet<Key>();
-                void KeyBindDown(object sender2, KeyEventArgs e2)
+                void KeyBindDown(object sender2, GlobalHook.MyEventArgs e2)
                 {
-                    var key = e2.Key == Key.System ? e2.SystemKey : e2.Key;
+                    var key = e2.e.Key == Key.System ? e2.e.SystemKey : e2.e.Key;
                     if (!inputKeys.Contains(key))
                     {
                         inputKeys.Add(key);
                         keyBind.Text = string.Join(" + ", inputKeys);
                     }
                 };
-                void KeyBindUp(object sender2, KeyEventArgs e2)
+                void KeyBindUp(object sender2, GlobalHook.MyEventArgs e2)
                 {
                     Hook.gh.KeyDown -= KeyBindDown;
                     Hook.gh.KeyUp -= KeyBindUp;
@@ -737,6 +737,8 @@ namespace Binder
             hw.BooleanHelps.Text = "Скрипты, возвращающие значения типа Boolean, возвращают булево значение (true/false), могут применяться в качестве параметров к скриптам с параметрами типа Boolean. Скрипты:";
             hw.BooleanHelps.Text += Environment.NewLine;
 
+            hw.AtrsHelps.Text = "Чтобы использовать атрибуты, нужна написать их вначале скрипта в квадратных скобках [] через запятую." + Environment.NewLine + "Поддерживаемые атрибуты:" + Environment.NewLine;
+            hw.AtrsHelps.Text += "*Block - блокирует передачу клавиши другим приложениям до завершения основного потока бинда." + Environment.NewLine + "*Exclusive - делает клавиши бинда эксклюзивными.";
 
             hw.img.Source = new BitmapImage(new Uri("pack://application:,,,/Pictures/помощь.png"));
 

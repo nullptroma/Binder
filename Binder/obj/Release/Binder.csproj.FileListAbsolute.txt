@@ -18,9 +18,9 @@ C:\Users\Roman\source\repos\Binder\Binder\obj\Release\Binder.exe
 C:\Users\Roman\source\repos\Binder\Binder\obj\Release\Binder.pdb
 C:\Users\Roman\source\repos\Binder\Binder\obj\Release\Binder.csproj.CoreCompileInputs.cache
 C:\Users\Roman\source\repos\Binder\Binder\obj\Release\Binder.csproj.CopyComplete
-C:\Users\Roman\source\repos\Binder\Binder\obj\Release\Binder_Content.g.cs
 C:\Users\Roman\source\repos\Binder\Binder\obj\Release\Windows\RecordWindow.g.cs
 C:\Users\Roman\source\repos\Binder\Binder\obj\Release\Windows\RecordWindow.baml
 C:\Users\Roman\source\repos\Binder\Binder\bin\Release\System.ValueTuple.dll
 C:\Users\Roman\source\repos\Binder\Binder\bin\Release\System.ValueTuple.xml
 C:\Users\Roman\source\repos\Binder\Binder\bin\Release\LowLevelControls.dll
+C:\Users\Roman\source\repos\Binder\Binder\obj\Release\Binder.csprojAssemblyReference.cache

@@ -164,7 +164,7 @@ namespace Binder
         }
 
         static HashSet<Thread> threads = new HashSet<Thread>();//потоки, выполняющие скрипты
-        static public void ExecScript(string sc,  Dictionary<string, object> vars = null, List<Func> fs = null)//выполнить скрипт
+        static public int ExecScript(string sc,  Dictionary<string, object> vars = null, List<Func> fs = null)//выполнить скрипт
         {
             RuntimeFlags flags=RuntimeFlags.None;
 
@@ -179,12 +179,15 @@ namespace Binder
                 {
                     switch (flag)
                     {
+                        case "Exclusive":
+                            flags = flags | RuntimeFlags.Exclusive;
+                            break;
                         case "Block":
                             flags = flags | RuntimeFlags.Block;
                             break;
                         default:
                             MessageBox.Show("Не найден атрибут " + flag + ", выполнение прервано", "Ошибка");
-                            return;
+                            return 0;
                     }
                 }
             }
@@ -212,6 +215,9 @@ namespace Binder
             th.Start();//запускаю выполнение
             if (flags.HasFlag(RuntimeFlags.Block))//если стоит флаг блокировки, ждём поток
                 th.Join();
+            if (flags.HasFlag(RuntimeFlags.Exclusive))
+                return 1;
+            return 0;
         }//выполнить скрипт с загруженными командами
 
         [Flags]
@@ -219,6 +225,7 @@ namespace Binder
         {
             None = 0,
             Block = 1,
+            Exclusive = 2,
         }
 
         static List<string> GetCommands(string sc)//получить список команд в скрипте

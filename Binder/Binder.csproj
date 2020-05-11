@@ -161,7 +161,9 @@
     <None Include="bin\Release\AutoHotkey.Interop.dll" />
     <None Include="Resources\Restarter.exe" />
     <EmbeddedResource Include="LowLevelControls.dll" />
-    <Content Include="Resources\ScriptsLibrary.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScriptsLibrary.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -93,10 +93,23 @@ namespace Binder
         // Хук
         private readonly WinAPI.User32.KeyboardHookProc _keyboardCallback;
 
+        //мой делегат
+        public delegate void MyEventHandler(object sender, MyEventArgs e);
+
         // События
-        public event KeyEventHandler KeyDown = (s, e) => { };
-        public event KeyEventHandler KeyUp = (s, e) => { };
+        public event MyEventHandler KeyDown = (s, e) => { };
+        public event MyEventHandler KeyUp = (s, e) => { };
         public bool block = false;
+        public class MyEventArgs
+        {
+            public bool Handled = false;
+            public KeyEventArgs e;
+
+            public MyEventArgs(KeyEventArgs k)
+            {
+                e = k;
+            }
+        }
         public GlobalHook()
         {
             // Создадим колбэки и сохраним их в полях класса, чтобы их не собрал GC
@@ -107,7 +120,7 @@ namespace Binder
                 if (code >= 0)
                 {
                     var key = KeyInterop.KeyFromVirtualKey((int)lParam.VKCode);
-                    var eventArgs = new KeyEventArgs(null, PresentationSource.FromVisual(Application.Current.MainWindow), 0,key);
+                    var eventArgs = new MyEventArgs(new KeyEventArgs(null, PresentationSource.FromVisual(Application.Current.MainWindow), 0, key));
                     
                     // В зависимости от типа пришедшего сообщения вызовем то или иное событие
                     switch (wParam)
