@@ -10,11 +10,12 @@
         <ScrollViewer x:Name="Scroll" Height="350" Canvas.Top="122" Width="436">
             <TextBox x:Name="RecordText" TextWrapping="Wrap"/>
         </ScrollViewer>
-        <Label Content="Начать/остановить запись: ALT+S" FontSize="11" Canvas.Top="-3"/>
-        <CheckBox x:Name="RecordMove" Content="Записывать движения мыши %" Canvas.Left="37" Canvas.Top="22" RenderTransformOrigin="1,0" FlowDirection="RightToLeft"/>
+        <Label Content="Начать/остановить запись: " FontSize="11" Canvas.Top="-3"/>
+        <Label Content="ALT+S" Canvas.Top="-4" Canvas.Left="142" FontWeight="Bold"/>
+        <CheckBox x:Name="RecordMove" Content="Записывать           % движений мыши" Canvas.Top="25" RenderTransformOrigin="1,0" FlowDirection="RightToLeft" Canvas.Left="6"/>
         <Button x:Name="Clear" Content="Очистить" Canvas.Left="362" Canvas.Top="97" Width="55" Click="Clear_Click"/>
         <Button x:Name="Copy" Content="Копировать" Canvas.Left="285" Canvas.Top="97" Width="72" Click="Copy_Click"/>
-        <TextBox x:Name="Perc" Height="15" Canvas.Left="4" TextWrapping="Wrap" Text="100" Canvas.Top="22" Width="31" KeyDown="Perc_KeyDown" TextChanged="Perc_TextChanged"/>
+        <TextBox x:Name="Perc" Height="15" Canvas.Left="73" TextWrapping="Wrap" Text="100" Canvas.Top="24" Width="31" KeyDown="Perc_KeyDown" TextChanged="Perc_TextChanged"/>
         <Label x:Name="RecordingLab" Content="" Canvas.Right="10" Canvas.Top="-3"/>
         <Label Content="Для имитации движения мыши использовать: " Canvas.Top="37"/>
         <Label Content="Для имитации клавиатуры использовать: " Canvas.Top="68"/>
